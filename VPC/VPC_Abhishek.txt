@@ -1,0 +1,39 @@
+VPC - Virtual Private Cloud
+
+Scenario:
+
+Assume there is a village and a lot of people. There are a set of lazy people who want houses to live but are lazy enough to construct and maintain the houses. A wise man took chance of it and said I will build the houses and maintain them instead they need to pay him. He bought a lot of land. They accepted and the wise man built the houses according to their requirements and let them live. 
+
+	This was all good but then another set of lazy man came and said they too want it in a similar way but they want it in a more secure way. Because in the previous houses if an external person has access to one house he can access all the other houses.
+
+	So, to secure the wise person built a gate around a set of houses, where the external person gets validated to enter the colony/set of houses. After entering he will be guided to the particular house he wants to enter and there will be another validation check to enter the specific house..
+
+
+
+-- AWS
+
+	The wise person is the AWS and the lazy persons are the companies. The land he bought are the regions and the houses are lets say EC2 instances or some service. Previously till 2013 AWS used to give EC2 instances from which ever server they are free. Assume 5 companies requested 5 EC2 servers and all were given from a single server. Now even if one instance is comprimised all the other 4 instances could be comprimised because they all reside in the same server.
+
+	To avoid these situations/ security breach - AWS built a secure way which is called as VPC. The size of VPC can be defined using IP Address range. Assume a company bought a set of IP address range for their projects. Now they can have multiple sub-projects, so they split the IP addresses for their sub-projects.
+	This splitting of IP-Address range is called subnets. 
+
+	As it is a secure one, to secure the VPC we have a Gateway.[To allow specific people to access VPC].  The gateway also be IGW- Internet Gateway, to allow public subnet connect to the Internet.
+
+Public subnet: Part of VPC which have access to the internet with the help of IGW. User enters into VPC with the help of public subnet.
+
+Now the user/request must go to a specific application defined in a specific subnet. This path is specified in the route table. Route table defines the path to reach the subnet.
+
+	After reaching the particular application, it again has validation with the help of Security groups. SG checks from which port the request has come and to which IP it has to connect and either allows or denies the request.
+
+Terminologies used:
+
+VPC 
+Subnet
+Internet Gateway
+Route Table
+Security Group
+Public and Private subnet
+
+NAT Gateways:
+
+Helps to access the internet from private network by masking the IP address of our private instance/application.  

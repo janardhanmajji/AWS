@@ -1,0 +1,3 @@
+IPV4 can be reprsented using A.B.C.D where a part of it is Network part and another part of it is host part.
+To identify the network part and host part we require Subnet Mask.
+The subnet mask donot actually contains the IP Address but has the info which part of the IP is network and which part of the IP is host.
